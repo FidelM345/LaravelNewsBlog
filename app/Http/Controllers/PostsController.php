@@ -182,17 +182,21 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
-
-        if(auth()->user()->id !==$post->user_id){
-            //ensures onnly the correct user can delete the blog content
-           //return redirect('/posts')-with()
-           return Redirect::action('PostsController@index')->with('error','UnAuthorized page please register or login to access the page');
-       }
+        
 
        // Post::destroy($id); one line that can be used to destroy the database entry or
 
        $post=Post::find($id);
+
+       //
+
+       if(auth()->user()->id !==$post->user_id){
+        //ensures onnly the correct user can delete the blog content
+       //return redirect('/posts')-with()
+       return Redirect::action('PostsController@index')->with('error','UnAuthorized page please register or login to access the page');
+         }
+
+
 
        if($post->cover_image !='noimage.jpg'){
            //Delete image

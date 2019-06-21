@@ -158,6 +158,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,//laravel collective
         Unisharp\Ckeditor\ServiceProvider::class,//laravel text editor
+        Unlu\Laravel\Api\ApiQueryBuilderServiceProvider::class,
+      //  Lanin\Laravel\ApiExceptions\ApiExceptionsServiceProvider::class, //api exception handler package
 
         /*
          * Package Service Providers...
@@ -171,6 +173,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+      
 
     ],
 
