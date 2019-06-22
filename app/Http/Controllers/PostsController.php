@@ -183,11 +183,9 @@ class PostsController extends Controller
     public function destroy($id)
     {
         
-
-       // Post::destroy($id); one line that can be used to destroy the database entry or
+        // Post::destroy($id); one line that can be used to destroy the database entry or
 
        $post=Post::find($id);
-
        //
 
        if(auth()->user()->id !==$post->user_id){
@@ -204,7 +202,6 @@ class PostsController extends Controller
            Storage::delete('public/cover_images/'.$post->cover_image);
 
        }
-
        
         return Redirect::action('PostsController@index')->with('warning','Data has been Deleted successfully');
     }
