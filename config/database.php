@@ -2,7 +2,12 @@
 
 use Illuminate\Support\Str;
 
-$url = parse_url(getenv("DATABASE_URL"));
+
+// postgres://aqtphntmtpamyw:f3dd6adf78efd71a1f14350b3fa85987dd403a06b1ec68b4cdb80e8aab5cb79e@ec2-50-19-254-63.compute-1.amazonaws.com:5432/dbt0q8rmiqvdl8
+//$url = parse_url(getenv("DATABASE_URL"));
+
+
+$url= parse_url(env('DATABASE_URL', "postgres://aqtphntmtpamyw:f3dd6adf78efd71a1f14350b3fa85987dd403a06b1ec68b4cdb80e8aab5cb79e@ec2-50-19-254-63.compute-1.amazonaws.com:5432/dbt0q8rmiqvdl8"));
 
 $host = $url["host"];
 $username = $url["user"];
